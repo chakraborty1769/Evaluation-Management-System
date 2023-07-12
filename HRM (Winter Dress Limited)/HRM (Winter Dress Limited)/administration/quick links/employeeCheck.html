@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDL | Employee Check</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
+</head>
+<body class="hold-transition sidebar-collapse layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <!-- <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div> -->
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-lg bg-body-tertiary navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <!-- <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarNavDropdown">
+      <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" href="../../dashboard.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../recruimentQuickLinks.html">Recruitment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../employeeQuickLinks.html">Employee</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../servicesQuickLinks.html">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../payrollQuickLinks.html">Payroll</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../attendance&LeaveQuickLinks.html">Attendance & Leave</a>
+      </li>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <!-- <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span> -->
+          <i class="fas fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Employee Detail Start -->
+            <div class="media">
+              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Employee Name
+                </h3>
+                <p class="text-sm text-muted">Employee ID</p>
+              </div>
+            </div>
+            <!-- Employee Detail End -->
+          </a>
+          <!-- <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa-solid fa-rectangle-list mr-2"></i>
+                </div>
+                <div class="col-10">
+                    Attendance & Leave
+                </div>
+              </div>
+          </a> -->
+          <div class="dropdown-divider"></div>
+          <a href="../../administrationQuickLinks.html" class="dropdown-item">
+            <div class="row">
+                <div class="col-2">
+                    <i class="fas fa-user-pen mr-2"></i>
+                </div>
+                <div class="col-10">
+                    Administration
+                </div>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <div class="row">
+                <div class="col-2">
+                    <i class="fas fa-key mr-2"></i>
+                </div>
+                <div class="col-10">
+                    Change Password
+                </div>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <div class="row">
+                <div class="col-2">
+                    <i class="fas fa-right-from-bracket mr-2"></i>
+                </div>
+                <div class="col-10">
+                    Logout
+                </div>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      
+    </ul>
+    </div>
+    
+  </nav>
+  <!-- /.navbar -->
+
+  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Employee Check</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#"><img src="../../dist/img/logo-WDL.png" alt="company name"></a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Horizontal Form -->
+            <div class="card card-outline card-info">
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="inpUserID" class="col-sm-2 col-form-label">Employee ID</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpUserID" required>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="submit" class="btn btn-sm bg-gradient-info">Load</button>
+                            </div>
+                            <!-- Horizontal Row -->
+                            <div class="col-12"><hr></div>
+                            <div class="col-12 form-heading">
+                                <h5>Basic Check</h5>
+                            </div>
+                            <label for="inpName" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpName" readonly>
+                            </div>
+                            <label for="inpDateOfBirth" class="col-sm-2 col-form-label">Date of Birth</label>
+                            <div class="col-sm-2">
+                                <input type="date" class="form-control form-control-sm form-control-border border-width" id="inpDateOfBirth" readonly>
+                            </div>
+                            <label for="inpDeviceID" class="col-sm-2 col-form-label">Device ID</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpDeviceID" readonly>
+                            </div>
+                            <label for="inpUniqueID" class="col-sm-2 col-form-label">Unique ID</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpUniqueID" readonly>
+                            </div>
+                            <label for="inpEmployeeStatus" class="col-sm-2 col-form-label">Employee Status</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpEmployeeStatus" readonly>
+                            </div>
+                            <label for="inpEmployeeType" class="col-sm-2 col-form-label">Employee Type</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpEmployeeType" readonly>
+                            </div>
+                            <!-- Horizontal Row -->
+                            <div class="col-12"><hr></div>
+                            <div class="col-12 form-heading">
+                                <h5>Service Check</h5>
+                            </div>
+                            <label for="inpUnit" class="col-sm-2 col-form-label">Unit</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpUnit" readonly>
+                            </div>
+                            <label for="inpDesignation" class="col-sm-2 col-form-label">Designation</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpDesignation" readonly>
+                            </div>
+                            <label for="inpDepartment" class="col-sm-2 col-form-label">Department</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpDepartment" readonly>
+                            </div>
+                            <label for="inpHeadUniqueID" class="col-sm-2 col-form-label">Head Unique ID</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpHeadUniqueID" readonly>
+                            </div>
+                            <label for="inpSection" class="col-sm-2 col-form-label">Section</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpSection" readonly>
+                            </div>
+                            <label for="inpSubSection" class="col-sm-2 col-form-label">Sub Section</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpSubSection" readonly>
+                            </div>
+                            <!-- Horizontal Row -->
+                            <div class="col-12"><hr></div>
+                            <div class="col-12 form-heading">
+                                <h5>Others Check</h5>
+                            </div>
+                            <label for="inpChildren" class="col-sm-2 col-form-label">Children</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpChildren" readonly>
+                            </div>
+                            <label for="inpContact" class="col-sm-2 col-form-label">Contact</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpContact" readonly>
+                            </div>
+                            <label for="inpNominee" class="col-sm-2 col-form-label">Nominee</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpNominee" readonly>
+                            </div>
+                            <label for="inpAcademic" class="col-sm-2 col-form-label">Academic</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpAcademic" readonly>
+                            </div>
+                            <label for="inpJobExperience" class="col-sm-2 col-form-label">Job Experience</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpJobExperience" readonly>
+                            </div>
+                            <label for="inpReference" class="col-sm-2 col-form-label">Reference</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpReference" readonly>
+                            </div>
+                            <label for="inpPayroll" class="col-sm-2 col-form-label">Payroll</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpPayroll" readonly>
+                            </div>
+                            <label for="inpAdvance" class="col-sm-2 col-form-label">Advance</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpAdvance" readonly>
+                            </div>
+                            <label for="inpAttendance" class="col-sm-2 col-form-label">Attendance</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpAttendance" readonly>
+                            </div>
+                            <label for="inpShift" class="col-sm-2 col-form-label">Shift</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpShift" readonly>
+                            </div>
+                            <label for="inpBlock" class="col-sm-2 col-form-label">Block</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpBlock" readonly>
+                            </div>
+                            <label for="inpMonthlySalary" class="col-sm-2 col-form-label">Monthly Salary</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpMonthlySalary" readonly>
+                            </div>
+                            <label for="inpUnis" class="col-sm-2 col-form-label">Unis</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpUnis" readonly>
+                            </div>
+                            <label for="inpUserRole" class="col-sm-2 col-form-label">User Role</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control form-control-sm form-control-border border-width" id="inpUserRole" readonly>
+                            </div>
+                        </div>                        
+                    </div>
+                    <!-- /.card-body -->
+                </form>
+            </div>
+            <!-- /.card -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; <a href="https://white.services/">White Services Technology</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>HRM</b> 
+    </div>
+  </footer>
+
+  
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.js"></script>
+</body>
+</html>

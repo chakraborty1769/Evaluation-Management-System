@@ -1,0 +1,36 @@
+package com.finalproject.EvaluationManagementSystem.controller;
+
+import com.finalproject.EvaluationManagementSystem.model.TaskTypeModel;
+import com.finalproject.EvaluationManagementSystem.service.TaskTypeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/ems/task-type")
+@RequiredArgsConstructor
+public class TaskTypeController {
+    private final TaskTypeService taskTypeService;
+    @PostMapping("/create")
+    public ResponseEntity<Object> create(@RequestBody TaskTypeModel taskTypeModel){
+        return taskTypeService.create(taskTypeModel);
+    }
+    @PutMapping("/update")
+    public ResponseEntity<Object> update(@RequestBody TaskTypeModel taskTypeModel){
+        return taskTypeService.update(taskTypeModel);
+    }
+    @DeleteMapping("/delete")
+    public ResponseEntity<Object> delete(@RequestBody TaskTypeModel taskTypeModel){
+        return taskTypeService.delete(taskTypeModel);
+    }
+    @GetMapping("/all")
+    public ResponseEntity<List<TaskTypeModel>> getAll(){
+        return taskTypeService.typeList();
+    }
+    @GetMapping("/{typeID}")
+    public ResponseEntity<Object> getTaskType(@PathVariable("typeID") Long typeID){
+        return taskTypeService.getTaskTypeByID(typeID);
+    }
+}
