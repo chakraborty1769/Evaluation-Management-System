@@ -8,7 +8,7 @@ import java.util.List;
 public interface TaskTypeService {
     ResponseEntity<Object> create(TaskTypeModel taskTypeModel);
 
-    ResponseEntity<Object> update(TaskTypeModel taskTypeModel);
+    ResponseEntity<Object> update(TaskTypeModel updatedTaskTypeModel, Long typeID);
 
     ResponseEntity<Object> delete(TaskTypeModel taskTypeModel);
 

@@ -26,7 +26,7 @@ public class TaskCreationEntity {
     @ManyToOne
     @JoinColumn(name = "batch_id")
     private BatchEntity batchEntity;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "type_id")
     private TaskTypeEntity taskType;
     private Date createDate;

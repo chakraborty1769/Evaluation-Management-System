@@ -17,9 +17,9 @@ public class TaskTypeController {
     public ResponseEntity<Object> create(@RequestBody TaskTypeModel taskTypeModel){
         return taskTypeService.create(taskTypeModel);
     }
-    @PutMapping("/update")
-    public ResponseEntity<Object> update(@RequestBody TaskTypeModel taskTypeModel){
-        return taskTypeService.update(taskTypeModel);
+    @PutMapping("/update/{typeID}")
+    public ResponseEntity<Object> update(@RequestBody TaskTypeModel updatedTaskTypeModel, @PathVariable("typeID") Long typeID){
+        return taskTypeService.update(updatedTaskTypeModel, typeID);
     }
     @DeleteMapping("/delete")
     public ResponseEntity<Object> delete(@RequestBody TaskTypeModel taskTypeModel){
