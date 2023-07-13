@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Branch List</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="../../index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+      <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">POS</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa-sharp fa-solid fa-code"></i>
+              <p>
+                <!-- <i class="fas fa-display-code"></i> -->
+                Developer
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../../index.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Application</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Package</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Menu</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-user-pen"></i>
+              <p>
+                Administration
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../forms/userSubscription.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User Subscription</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../forms/branchList.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Branch</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                    Role
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Role</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Edit Role</p>
+                      </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="../forms/accessControl.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Access Control</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Employee</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Employment Type</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Modal for New Branch-->
+    <div class="modal fade" id="newBranch" tabindex="-1" role="dialog" aria-labelledby="newBranchTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newBranchTitle">Add New Branch</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branchName">Name</label>
+                                <input class="form-control form-control-sm" id="branchName" type="text">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branchAddress">Address</label>
+                                <textarea class="form-control" rows="3" id="branchAddress" placeholder="Enter Address"></textarea>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branchContactNo">Contact No</label>
+                                <input class="form-control form-control-sm" id="branchContactNo" type="text" minlength="11" maxlength="11" placeholder="01*********">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="vatRegistrationNumber">VAT Registration Number</label>
+                                <input class="form-control form-control-sm" id="vatRegistrationNumber" type="text">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branchEmail">Email</label>
+                                <input class="form-control form-control-sm" id="branchEmail" type="email" placeholder="branchname@example.com">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branchTokenKey">Token Key</label>
+                                <input class="form-control form-control-sm" id="branchTokenKey" type="text">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branchLocation">Location</label>
+                                <input class="form-control form-control-sm" id="branchLocation" type="text" placeholder="eg: Motijheel, Gulshan, etc.">
+                            </div>
+                        <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="icheck-success d-inline form-group">
+                                <input type="checkbox" checked="checked" id="isMasterBranch">
+                                <label for="isMasterBranch">Master Branch</label>
+                                
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Editing Branch-->
+    <div class="modal fade" id="editBranch" tabindex="-1" role="dialog" aria-labelledby="editBranchTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editBranchTitle">Edit Branch</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editBranchName">Name</label>
+                                <input class="form-control form-control-sm" id="editBranchName" type="text">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editBranchAddress">Address</label>
+                                <textarea class="form-control" rows="3" id="editBranchAddress" placeholder="Enter Address"></textarea>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editBranchContactNo">Contact No</label>
+                                <input class="form-control form-control-sm" id="editBranchContactNo" type="text" minlength="11" maxlength="11" placeholder="01*********">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editVatRegistrationNumber">VAT Registration Number</label>
+                                <input class="form-control form-control-sm" id="editVatRegistrationNumber" type="text">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editBranchEmail">Email</label>
+                                <input class="form-control form-control-sm" id="editBranchEmail" type="email" placeholder="branchname@example.com">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editBranchTokenKey">Token Key</label>
+                                <input class="form-control form-control-sm" id="editBranchTokenKey" type="text">
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="editBranchLocation">Location</label>
+                                <input class="form-control form-control-sm" id="editBranchLocation" type="text" placeholder="eg: Motijheel, Gulshan, etc.">
+                            </div>
+                        <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="icheck-success d-inline form-group">
+                                <input type="checkbox" id="isMasterBranch">
+                                <label for="isMasterBranch">Master Branch</label>
+                                
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="updateBranch">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Branch List</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Administration</a></li>
+              <li class="breadcrumb-item active">Branch List</li>
+            </ol>
+          </div>
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary float-sm-right" data-toggle="modal" data-target="#newBranch">Add</button>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content" style="margin-top: 5px;">
+        <div class="container-fluid">
+            <!-- Branch 1 -->
+            <div class="card card-info collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title" id="branch1Name">Branch 1 Name</h3>
+        
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body" aria-expanded="true">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branch1Address">Address</label>
+                                <textarea class="form-control" rows="3" id="branch1Address" placeholder="Enter Address" value="Hello" readonly></textarea>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branch1ContactNo">Contact No</label>
+                                <input class="form-control form-control-sm" id="branch1ContactNo" type="text" minlength="11" maxlength="11" placeholder="01*********" value="123" readonly>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="vatRegistrationNumber1">VAT Registration Number</label>
+                                <input class="form-control form-control-sm" id="vatRegistrationNumber1" type="text" value="12345" readonly>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branch1Email">Email</label>
+                                <input class="form-control form-control-sm" id="branch1Email" type="email" placeholder="branchname@example.com" value="akash@gmail.com" readonly>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branch1TokenKey">Token Key</label>
+                                <input class="form-control form-control-sm" id="branch1TokenKey" type="text" value="123" readonly>
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branch1Location">Location</label>
+                                <input class="form-control form-control-sm" id="branch1Location" type="text" placeholder="eg: Motijheel, Gulshan, etc." value="Motijheel" readonly>
+                            </div>
+                        <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6">
+                            <div class="icheck-success d-inline form-group">
+                                <input type="checkbox" checked="checked" id="isMasterBranch" disabled>
+                                <label for="isMasterBranch">Master Branch</label>
+                                
+                            </div>
+                            <!-- /.form-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary" id="editBranch1Button" data-toggle="modal" data-target="#editBranch">Edit</button>
+                </div>
+            </div>
+            <!-- /.card -->
+            <!-- Branch 2 -->
+            <div class="card card-info collapsed-card">
+              <div class="card-header">
+                  <h3 class="card-title" id="branch2Name">Branch 2 Name</h3>
+      
+                  <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-plus"></i>
+                      </button>
+                      <!-- <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i> -->
+                      </button>
+                  </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" aria-expanded="true">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch2Address">Address</label>
+                              <textarea class="form-control" rows="3" id="branch2Address" placeholder="Enter Address" text="Hello" readonly></textarea>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch2ContactNo">Contact No</label>
+                              <input class="form-control form-control-sm" id="branch2ContactNo" type="text" minlength="11" maxlength="11" placeholder="01*********" value="456" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="vatRegistrationNumber2">VAT Registration Number</label>
+                              <input class="form-control form-control-sm" id="vatRegistrationNumber2" type="text" value="45678" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch2Email">Email</label>
+                              <input class="form-control form-control-sm" id="branch2Email" type="email" placeholder="branchname@example.com" value="ramisa@gmail.com" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch2TokenKey">Token Key</label>
+                              <input class="form-control form-control-sm" id="branch2TokenKey" type="text" value="456" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch2Location">Location</label>
+                              <input class="form-control form-control-sm" id="branch2Location" type="text" placeholder="eg: Motijheel, Gulshan, etc." value="Dhanmondi" readonly>
+                          </div>
+                      <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                      <div class="col-md-6">
+                          <div class="icheck-success d-inline form-group">
+                              <input type="checkbox" checked="checked" id="isMasterBranch2">
+                              <label for="isMasterBranch2">Master Branch</label>
+                              
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                  <button type="button" class="btn btn-primary" id="editBranch2Button" data-toggle="modal" data-target="#editBranch">Edit</button>
+              </div>
+          </div>
+          <!-- /.card -->
+            <!-- Branch 3 -->
+            <div class="card card-info collapsed-card">
+              <div class="card-header">
+                  <h3 class="card-title" id="branch3Name">Branch 3 Name</h3>
+      
+                  <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-plus"></i>
+                      </button>
+                      <!-- <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i> -->
+                      </button>
+                  </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" aria-expanded="true">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch3Address">Address</label>
+                              <textarea class="form-control" rows="3" id="branch3Address" placeholder="Enter Address" text="Hi" readonly></textarea>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch3ContactNo">Contact No</label>
+                              <input class="form-control form-control-sm" id="branch3ContactNo" type="text" minlength="11" maxlength="11" placeholder="01*********" value="789" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="vatRegistrationNumber3">VAT Registration Number</label>
+                              <input class="form-control form-control-sm" id="vatRegistrationNumber3" type="text" value="67890" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch3Email">Email</label>
+                              <input class="form-control form-control-sm" id="branch3Email" type="email" placeholder="branchname@example.com" value="foysal@gmail.com" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch3TokenKey">Token Key</label>
+                              <input class="form-control form-control-sm" id="branch3TokenKey" type="text" value="789" readonly>
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="branch3Location">Location</label>
+                              <input class="form-control form-control-sm" id="branch3Location" type="text" placeholder="eg: Motijheel, Gulshan, etc." value="Gulshan" readonly>
+                          </div>
+                      <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                      <div class="col-md-6">
+                          <div class="icheck-success d-inline form-group">
+                              <input type="checkbox" checked="checked" id="isMasterBranch3">
+                              <label for="isMasterBranch3">Master Branch</label>
+                              
+                          </div>
+                          <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                  <button type="button" class="btn btn-primary" id="editBranch3Button" data-toggle="modal" data-target="#editBranch">Edit</button>
+              </div>
+          </div>
+          <!-- /.card --> 
+            
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+    <!-- <b>Version</b> 3.2.0
+     -->
+    </div>
+    <strong> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="icon-heart" aria-hidden="true"></i> by <a href="https://white.services" target="_blank">WSTECH</a>
+</footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $.validator.setDefaults({
+      submitHandler: function () {
+        alert( "Form successful submitted!" );
+      }
+    });
+    
+    //Edit Branch 1
+    $('#editBranch1Button').click(function(){
+        $('#editBranchName').val($('#branch1Name').html());
+        $('#editBranchAddress').val($('#branch1Address').val());
+        $('#editBranchContactNo').val($('#branch1ContactNo').val());
+        $('#editVatRegistrationNumber').val($('#vatRegistrationNumber1').val());
+        $('#editBranchEmail').val($('#branch1Email').val());
+        $('#editBranchTokenKey').val($('#branch1TokenKey').val());
+        $('#editBranchLocation').val($('#branch1Location').val());
+    })
+    //Edit Branch 2
+    $('#editBranch2Button').click(function(){
+        $('#editBranchName').val($('#branch2Name').html());
+        $('#editBranchAddress').val($('#branch2Address').val());
+        $('#editBranchContactNo').val($('#branch2ContactNo').val());
+        $('#editVatRegistrationNumber').val($('#vatRegistrationNumber2').val());
+        $('#editBranchEmail').val($('#branch2Email').val());
+        $('#editBranchTokenKey').val($('#branch2TokenKey').val());
+        $('#editBranchLocation').val($('#branch2Location').val());
+    })
+    //Edit Branch 3
+    $('#editBranch3Button').click(function(){
+        $('#editBranchName').val($('#branch3Name').html());
+        $('#editBranchAddress').val($('#branch3Address').val());
+        $('#editBranchContactNo').val($('#branch3ContactNo').val());
+        $('#editVatRegistrationNumber').val($('#vatRegistrationNumber3').val());
+        $('#editBranchEmail').val($('#branch3Email').val());
+        $('#editBranchTokenKey').val($('#branch3TokenKey').val());
+        $('#editBranchLocation').val($('#branch3Location').val());
+    })
+    //Update Branch 1
+    $('#updateBranch').click(function(){
+        $('#branch1Name').html($('#editBranchName').val());
+        $('#branch1Address').val($('#editBranchAddress').val());
+        $('#branch1ContactNo').val($('#editBranchContactNo').val());
+        $('#vatRegistrationNumber1').val($('#editVatRegistrationNumber').val());
+        $('#branch1Email').val($('#editBranchEmail').val());
+        $('#branch1TokenKey').val($('#editBranchTokenKey').val());
+        $('#branch1Location').val($('#editBranchLocation').val());
+    })
+    //Update Branch 2
+    $('#updateBranch').click(function(){
+        $('#branch2Name').html($('#editBranchName').val());
+        $('#branch2Address').val($('#editBranchAddress').val());
+        $('#branch2ContactNo').val($('#editBranchContactNo').val());
+        $('#vatRegistrationNumber2').val($('#editVatRegistrationNumber').val());
+        $('#branch2Email').val($('#editBranchEmail').val());
+        $('#branch2TokenKey').val($('#editBranchTokenKey').val());
+        $('#branch2Location').val($('#editBranchLocation').val());
+    })
+    //Update Branch 3
+    $('#updateBranch').click(function(){
+        $('#branch3Name').html($('#editBranchName').val());
+        $('#branch3Address').val($('#editBranchAddress').val());
+        $('#branch3ContactNo').val($('#editBranchContactNo').val());
+        $('#vatRegistrationNumber3').val($('#editVatRegistrationNumber').val());
+        $('#branch3Email').val($('#editBranchEmail').val());
+        $('#branch3TokenKey').val($('#editBranchTokenKey').val());
+        $('#branch3Location').val($('#editBranchLocation').val());
+    })
+    $('#quickForm').validate({
+      rules: {
+        email: {
+          required: true,
+          email: true,
+        },
+        password: {
+          required: true,
+          minlength: 5
+        },
+        terms: {
+          required: true
+        },
+      },
+      messages: {
+        email: {
+          required: "Please enter a email address",
+          email: "Please enter a valid email address"
+        },
+        password: {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long"
+        },
+        terms: "Please accept our terms"
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
+  
+</script>
+</body>
+</html>

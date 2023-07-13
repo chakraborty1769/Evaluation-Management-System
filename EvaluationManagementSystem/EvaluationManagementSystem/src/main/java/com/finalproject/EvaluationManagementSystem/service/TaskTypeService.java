@@ -1,5 +1,6 @@
 package com.finalproject.EvaluationManagementSystem.service;
 
+import com.finalproject.EvaluationManagementSystem.entity.TaskTypeEntity;
 import com.finalproject.EvaluationManagementSystem.model.TaskTypeModel;
 import org.springframework.http.ResponseEntity;
 
@@ -12,7 +13,7 @@ public interface TaskTypeService {
 
     ResponseEntity<Object> delete(TaskTypeModel taskTypeModel);
 
-    ResponseEntity<List<TaskTypeModel>> typeList();
+    ResponseEntity<List<TaskTypeEntity>> typeList();
 
     ResponseEntity<Object> getTaskTypeByID(Long typeID);
 }

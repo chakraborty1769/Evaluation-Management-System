@@ -1,0 +1,513 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POS | Access Control</title>
+    
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    </head>
+    <body class="hold-transition sidebar-mini">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="../../index3.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+            <!-- Navbar Search -->
+            <li class="nav-item">
+                <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+                </a>
+                <div class="navbar-search-block">
+                <form class="form-inline">
+                    <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                        </button>
+                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                        <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    </div>
+                </form>
+                </div>
+            </li>
+
+            
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="../../index3.html" class="brand-link">
+        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">POS</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="nav-icon fa-sharp fa-solid fa-code"></i>
+                <p>
+                    Developer
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="../../index.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Application</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index2.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Package</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index3.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Menu</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-user-pen"></i>
+                <p>
+                    Administration
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="../forms/userSubscription.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>User Subscription</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../forms/branchList.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Branch</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Role
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Create Role</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Edit Role</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="../forms/accessControl.html" class="nav-link active">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Access Control</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Employee</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Employment Type</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Modal for Creating Role-->
+        <div class="modal fade" id="createRole" tabindex="-1" role="dialog" aria-labelledby="createRoleTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createRoleTitle">Create Role</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="createRoleName">Name of Role</label>
+                                    <input class="form-control form-control-sm" id="createRoleName" type="text">
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="createRole">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Editing Role-->
+        <div class="modal fade" id="editRole" tabindex="-1" role="dialog" aria-labelledby="editRoleTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editRoleTitle">Edit Roll</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="editRoleName">Name of Role</label>
+                                    <input class="form-control form-control-sm" id="editRoleName" type="text">
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="updateRole">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Access Control</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Administration</a></li>
+                        <li class="breadcrumb-item active">Access Control</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content" style="margin-top: 5px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <!-- Profile Image -->
+                        <div class="card card-primary card-outline">
+                            <div class="card-body box-profile">
+                                <!-- <div class="text-center">
+                                    <img class="profile-user-img img-fluid img-circle"
+                                    src="../../dist/img/user4-128x128.jpg"
+                                    alt="User profile picture">
+                                </div>
+
+                                <h3 class="profile-username text-center">Nina Mcintire</h3>
+
+                                <p class="text-muted text-center">Software Engineer</p> -->
+
+                                <ul class="list-group list-group-unbordered mb-3">
+                                    <li class="list-group-item">
+                                        <b>Total Roles</b> <a class="float-right">5</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <select class="form-control form-control-sm select2bs4" id="subscriptionDays" style="width: 100%;">
+                                            <option selected="selected">Select Role</option>
+                                            <option value="1">Role 1</option>
+                                            <option value="2">Role 2</option>
+                                            <option value="3">Role 3</option>
+                                            <option value="4">Role 4</option>
+                                            <option value="5">Role 5</option>
+                                        </select>
+                                    </li>
+                                </ul>
+
+                                <a href="#" type="button" class="btn btn-secondary btn-block"><b>Load</b></a>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#createRole">Create</button>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editRole">Edit</button>
+                                        <!-- <div class="col-sm-6 mt-1 mb-1">
+                                            <a href="#" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#createRoll"><b>Create</b></a>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createRoll">Create</button>
+                                        </div>
+                                        <div class="col-sm-6 mt-1 mb-1">
+                                            <a href="#" type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#editRoll"><b>Edit</b></a>
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editRoll">Edit</button>
+                                        </div> -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+
+                        
+                    </div>
+                    <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title" id="roleName">Name of Role</h3>
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <!-- Post -->
+                                <div class="post">
+                                    <div class="user-block">
+                                        <div class="icheck-success d-inline form-group">
+                                            <input type="checkbox" id="parentMenu1">
+                                            <label for="parentMenu1">Developer</label>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <div class="row mb-3 control">
+                                        <div class="col-sm-12 collapse collapseContainer1">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child1Menu1">
+                                                    <label for="child1Menu1">Application</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child1Menu2">
+                                                    <label for="child1Menu2">Package</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child1Menu3">
+                                                    <label for="child1Menu3">Menu</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child1Menu4">
+                                                    <label for="child1Menu4">Child Menu 4</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+        
+                                    
+                                </div>
+                                <!-- /.post -->
+                                <!-- Post -->
+                                <div class="post">
+                                    <div class="user-block">
+                                        <div class="icheck-success d-inline form-group">
+                                            <input type="checkbox" id="parentMenu2">
+                                            <label for="parentMenu2">Administration</label>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <div class="row mb-3 control">
+                                        <div class="col-sm-12 collapse collapseContainer2">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child2Menu1">
+                                                    <label for="child2Menu1">User Subscription</label>  
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child2Menu2">
+                                                    <label for="child2Menu2">Branch</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child2Menu3">
+                                                    <label for="child2Menu3">Role</label> 
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child2Menu4">
+                                                    <label for="child2Menu4">Access Control</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.post -->
+
+                                <!-- Post -->
+                                <div class="post">
+                                    <div class="user-block">
+                                        <div class="icheck-success d-inline form-group">
+                                            <input type="checkbox" id="parentMenu3">
+                                            <label for="parentMenu3">Inventory</label>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <div class="row mb-3 control">
+                                        <div class="col-sm-12 collapse collapseContainer3">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child3Menu1">
+                                                    <label for="child3Menu1">Child Menu 1</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child3Menu2">
+                                                    <label for="child3Menu2">Child Menu 2</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child3Menu3">
+                                                    <label for="child3Menu3">Child Menu 3</label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="checkbox" id="child4Menu4">
+                                                    <label for="child4Menu4">Child Menu 4</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.post -->
+                            </div>
+                            <!-- /.tab-pane -->         
+
+                        </div>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+        <!-- <b>Version</b> 3.2.0
+         -->
+        </div>
+        <strong> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="https://white.services" target="_blank">WSTECH</a>
+    </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $checkbox1 = $('#parentMenu1');
+            var $checkbox2 = $('#parentMenu2');
+            var $checkbox3 = $('#parentMenu3');
+
+            var $collapseContainer1 = $('.collapseContainer1');
+            var $collapseContainer2 = $('.collapseContainer2');
+            var $collapseContainer3 = $('.collapseContainer3');
+
+            $checkbox1.change(function() { 
+                $collapseContainer1.collapse('toggle');
+            }); 
+
+            $checkbox2.change(function() { 
+                $collapseContainer2.collapse('toggle');
+            });
+
+            $checkbox3.change(function() { 
+                $collapseContainer3.collapse('toggle');
+            });
+
+            $collapseContainer1.collapse($checkbox1.prop('checked') ? "show" : "hide");
+            $collapseContainer2.collapse($checkbox2.prop('checked') ? "show" : "hide");
+            $collapseContainer3.collapse($checkbox3.prop('checked') ? "show" : "hide");
+        });
+    </script>
+    </body>
+    </html>

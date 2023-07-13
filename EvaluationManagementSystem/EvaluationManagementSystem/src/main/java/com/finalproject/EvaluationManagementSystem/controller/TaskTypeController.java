@@ -1,5 +1,6 @@
 package com.finalproject.EvaluationManagementSystem.controller;
 
+import com.finalproject.EvaluationManagementSystem.entity.TaskTypeEntity;
 import com.finalproject.EvaluationManagementSystem.model.TaskTypeModel;
 import com.finalproject.EvaluationManagementSystem.service.TaskTypeService;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class TaskTypeController {
         return taskTypeService.delete(taskTypeModel);
     }
     @GetMapping("/all")
-    public ResponseEntity<List<TaskTypeModel>> getAll(){
+    public ResponseEntity<List<TaskTypeEntity>> getAll(){
         return taskTypeService.typeList();
     }
     @GetMapping("/{typeID}")

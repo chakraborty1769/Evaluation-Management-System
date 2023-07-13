@@ -35,25 +35,40 @@ public class TaskTypeServiceImplementation implements TaskTypeService {
             TaskTypeEntity existingTaskType = taskTypeEntity.get();
             existingTaskType.setTypeName(updatedTaskTypeModel.getTypeName());
             TaskTypeEntity savedUpdate = taskTypeRepository.save(existingTaskType);
-            return new ResponseEntity<>(savedUpdate, HttpStatus.OK);
+            return new ResponseEntity<>(savedUpdate, HttpStatus.ACCEPTED);
         }
     }
 
     @Override
     public ResponseEntity<Object> delete(TaskTypeModel taskTypeModel) {
-
-        return null;
+        Optional<TaskTypeEntity> taskTypeEntity = taskTypeRepository.findByTypeName(taskTypeModel.getTypeName());
+        if(taskTypeEntity.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        else{
+            TaskTypeEntity existingTaskType = taskTypeEntity.get();
+            taskTypeRepository.delete(existingTaskType);
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        }
     }
 
     @Override
-    public ResponseEntity<List<TaskTypeModel>> typeList() {
-
-        return null;
+    public ResponseEntity<List<TaskTypeEntity>> typeList() {
+        List<TaskTypeEntity> list = taskTypeRepository.findAll();
+        return new ResponseEntity<>(list, HttpStatus.FOUND);
     }
 
     @Override
     public ResponseEntity<Object> getTaskTypeByID(Long typeID) {
-
-        return null;
+        Optional<TaskTypeEntity> taskTypeEntity = taskTypeRepository.findById(typeID);
+        if (taskTypeEntity.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        else{
+            TaskTypeEntity existingTaskType = taskTypeEntity.get();
+            TaskTypeModel taskTypeModel = new TaskTypeModel();
+            taskTypeModel.setTypeName(existingTaskType.getTypeName());
+            return new ResponseEntity<>(taskTypeModel, HttpStatus.FOUND);
+        }
     }
 }
