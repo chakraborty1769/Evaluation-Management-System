@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Artisan | Admin Login</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/timer.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <script>
+            //focusing on Contact input
+            window.onload = function() {
+                document.getElementById("validationCustomContactNumber").focus();
+            }
+            //Disabling Submit button when input fields are empty
+            $(document).ready(function() {
+                
+                $('.field input').on('keyup', function() {
+                    let empty = false;
+
+                    $('.field input').each(function() {
+                    empty = $(this).val().length == 0;
+                    });
+
+                    if (empty){
+                        $('#loginSubmit').prop('disabled', true);
+                    }
+                    
+                    else{
+                        $('#loginSubmit').prop('disabled', false);
+                    }
+                    
+                });
+
+            });
+            //System alert
+            function systemAlert(title, text, icon){
+                var title = title
+                var text = text
+                var icon = icon
+                if(icon==0){
+                    swal(
+                        title,text,"error" 
+                    );
+                }
+                if(icon==1){
+                    swal(
+                        title,text,"warning" 
+                    );
+                }
+                if(icon==2){
+                    swal(
+                        title,text,"success" 
+                    );
+                }
+            }
+            //disable OTP till countdown ends
+            function disableButton() {
+                $('#sendOTP').prop('disabled',true);
+                setTimeout(function() {
+                    $('#sendOTP').prop('disabled',false);
+                },120000);   // enable after 120 seconds
+                // swal({
+                //     title: "Good job!",
+                //     text: "You clicked the button!",
+                //     icon: "success",
+                // });
+                document.getElementById("customerOTP").focus();
+            }
+
+            //set inputs as numbers only
+            function checkNumber(event) {
+
+                var aCode = event.which ? event.which : event.keyCode;
+
+                if (aCode > 31 && (aCode < 48 || aCode > 57)) return false;
+
+                return true;
+
+            }
+            //input field validation
+            function  main(){
+                var contact = document.getElementById('validationCustomContactNumber').value;
+                var password = document.getElementById('customerOTP').value;
+                var numbers = /[0-9]/g;
+
+                
+                //Checking empty inputs
+                if (contact == "" || password == ""){
+                    swal("Warning!", "Input field/s are empty!", "warning");
+                }
+                else if (contact == "0123"){
+                    if (password== "admiN123"){
+                        alert('You have entered the data correctly!')
+                    }
+                    if (password != "admiN123"){
+                    alert('Incorrect Password!')
+                    }
+                }
+                else if (password== "admiN123"){
+                    if (contact != "0123"){
+                    alert('Incorrect contact number!')
+                    }
+                        
+                }
+                //Validate numbers
+                if(myInput.value.match(numbers)) {
+                    number.classList.remove("invalid");
+                    number.classList.add("valid");
+                }
+                else {
+                    number.classList.remove("valid");
+                    number.classList.add("invalid");
+                }
+                //Validate length
+                if(password.length==4){
+                    length.classList.remove("invalid");
+                    length.classList.add("valid");
+                }
+                else{
+                    length.classList.remove("valid");
+                    length.classList.add("invalid");
+                }
+                
+                
+                
+
+                
+            }
+            
+            
+
+            
+        </script>
+    </head>
+    <body id="login">
+        <div class="container-fluid" style="min-height:100vh;">
+            
+            
+            
+            <div class="container bg-body-tertiary rounded" id="form">
+                <div class="row">
+                    <div class="text-center" id="companyLogo">
+                        <img src="images/logo-2-1.png" alt="Logo" class="rounded mx-auto d-block img-fluid">
+                    </div>
+                    <div id="mainHeader">
+                        <h3>Login</h3>
+                    </div>
+                    <div class="col-12">
+                        <form class="row needs-validation loginForm">
+                            <div class="mb-3 field">
+                                <label for="validationCustomContactNumber" class="form-label" id="formInputs"><b>Contact Number</b></label>
+                                <input type="text" placeholder="01*********" class="form-control" id="validationCustomContactNumber" aria-describedby="emailHelp" maxlength="11" onkeypress="return checkNumber(event)" required>
+                                
+                                <div id="emailHelp" class="form-text">Please enter Bangladeshi numbers only</div>
+                            </div>
+                            
+                            <div class="mb-3 field">
+                                
+                                <button id="sendOTP" type="button" id="js-startTimer" class="text-center btn btn-success" onclick="CountDownTimer('timer',120);disableButton(); systemAlert('Good Job!','Your OTP request is successful!',2)">Send OTP</button>
+                                <div id="timer" style="margin-top: 5px;">
+                                    
+                                </div>
+                                
+                                
+                                <input type="text" class="form-control" id="customerOTP" pattern="(?=.*\d).{4}" maxlength="4" onkeypress="return checkNumber(event)" required>
+                            </div>
+                        </form>
+                        <form class="row action" action="dashboard.html">
+                            <button id="loginSubmit" class="btn btn-success" style="margin: auto;" onclick="main()" disabled>Submit</button>
+                            <!-- <input type="submit" class="btn btn-success" style="margin: auto;" onclick="main()" value="Submit" id="loginSubmit"> -->
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <footer class="footer">
+                
+            <div class="col-12" style="text-align: center; color: white;">&copy; White Services Technology</div>
+                
+        </footer>
+        
+        
+    </body>
+</html>
