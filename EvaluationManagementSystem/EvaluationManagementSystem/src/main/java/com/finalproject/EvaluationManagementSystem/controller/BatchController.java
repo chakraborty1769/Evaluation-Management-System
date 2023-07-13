@@ -1,5 +1,6 @@
 package com.finalproject.EvaluationManagementSystem.controller;
 
+import com.finalproject.EvaluationManagementSystem.entity.BatchEntity;
 import com.finalproject.EvaluationManagementSystem.model.BatchModel;
 import com.finalproject.EvaluationManagementSystem.service.BatchService;
 import lombok.RequiredArgsConstructor;
@@ -17,16 +18,16 @@ public class BatchController {
     public ResponseEntity<Object> create(@RequestBody BatchModel batchModel){
         return batchService.create(batchModel);
     }
-    @PutMapping("/update")
-    public ResponseEntity<Object> update(@RequestBody BatchModel batchModel){
-        return batchService.update(batchModel);
+    @PutMapping("/update/{batchID}")
+    public ResponseEntity<Object> update(@RequestBody BatchModel batchModel, @PathVariable("batchID") Long batchID){
+        return batchService.update(batchModel, batchID);
     }
     @DeleteMapping("/delete")
     public ResponseEntity<Object> delete(@RequestBody BatchModel batchModel){
         return batchService.delete(batchModel);
     }
     @GetMapping("/all")
-    public ResponseEntity<List<BatchModel>> getAll(){
+    public ResponseEntity<List<BatchEntity>> getAll(){
         return batchService.batchList();
     }
     @GetMapping("/{batchID}")
