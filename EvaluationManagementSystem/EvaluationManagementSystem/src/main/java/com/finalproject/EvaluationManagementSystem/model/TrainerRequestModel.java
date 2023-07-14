@@ -16,5 +16,5 @@ public class TrainerRequestModel{
     private Date joiningDate;
     private Integer experience;
     private String expertise;
-    private User user;
+    private UserRequestModel userRequestModel;
 }

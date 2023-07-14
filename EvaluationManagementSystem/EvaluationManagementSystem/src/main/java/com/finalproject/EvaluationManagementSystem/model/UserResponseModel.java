@@ -7,14 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class User {
+public class UserResponseModel {
     private String fullName;
     private String image;
     private String email;
-    private String password;
     private String contactNumber;
     private String presentAddress;
     private Role role;

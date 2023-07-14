@@ -5,17 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.File;
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class TaskSubmitModel {
+public class TaskEvaluationModel {
     private Long taskID;
+    private Long submissionID;
     private Long typeID;
     private Long traineeID;
-    private Date submissionDate;
-    private File submittedFile;
+    private Double requirementUnderstanding;
+    private Double expectedOutput;
+    private Double presentation;
+    private Double liveCoding;
 }

@@ -18,5 +18,5 @@ public class TraineeRequestModel{
     private String educationalInstitute;
     private Double cgpa;
     private Year passingYear;
-    private User user;
+    private UserRequestModel userRequestModel;
 }

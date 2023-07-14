@@ -6,9 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Admin{
-    private UserRequestModel userRequestModel;
+public class AuthenticationResponse {
+    private String token;
 }
