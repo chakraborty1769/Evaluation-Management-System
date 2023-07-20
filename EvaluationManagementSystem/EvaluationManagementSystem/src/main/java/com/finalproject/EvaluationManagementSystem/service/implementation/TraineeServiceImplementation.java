@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TraineeServiceImplementation implements TraineeService {
+
     @Override
     public ResponseEntity<Object> create(TraineeRequestModel traineeRequestModel) {
+//        TraineeEntity traineeEntity = TraineeEntity.builder().build();
         return null;
     }
 

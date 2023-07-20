@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .permitAll()
                 .requestMatchers("/ems/user/login")
                 .permitAll()
-                .requestMatchers("/ems/batch/**").hasAuthority("ADMIN")
+                .requestMatchers("/ems/batch/**","/ems/task-type/**").hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

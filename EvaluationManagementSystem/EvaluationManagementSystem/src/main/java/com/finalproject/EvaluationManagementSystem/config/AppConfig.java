@@ -1,5 +1,6 @@
 package com.finalproject.EvaluationManagementSystem.config;
 
+import com.finalproject.EvaluationManagementSystem.model.UserResponseModel;
 import com.finalproject.EvaluationManagementSystem.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,10 @@ public class AppConfig {
     @Bean
     public UserDetailsService userDetailsService(){
         return userRepository::findByEmail;
+    }
+    @Bean
+    public UserResponseModel userResponseModel(){
+        return new UserResponseModel();
     }
     @Bean
     public AuthenticationProvider authenticationProvider(){
