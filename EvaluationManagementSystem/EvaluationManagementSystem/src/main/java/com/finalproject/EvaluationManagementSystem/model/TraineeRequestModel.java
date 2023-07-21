@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class TraineeRequestModel{
+    private String fullName;
     private String gender;
     private Date dob;
     private String degreeName;

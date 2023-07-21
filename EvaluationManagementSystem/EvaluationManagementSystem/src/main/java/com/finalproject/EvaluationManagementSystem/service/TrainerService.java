@@ -9,7 +9,7 @@ import java.util.List;
 public interface TrainerService {
     ResponseEntity<Object> create(TrainerRequestModel trainerRequestModel);
 
-    ResponseEntity<Object> update(Long userID, TrainerRequestModel updatedTrainerRequestModel);
+    ResponseEntity<Object> update(TrainerRequestModel updatedTrainerRequestModel);
 
     ResponseEntity<Object> getTrainee(Long trainerID);
 

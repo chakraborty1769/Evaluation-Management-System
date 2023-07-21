@@ -12,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class TrainerRequestModel{
+    private String fullName;
     private String designation;
     private Date joiningDate;
     private Integer experience;

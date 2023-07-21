@@ -1,6 +1,7 @@
 package com.finalproject.EvaluationManagementSystem.service.implementation;
 
 import com.finalproject.EvaluationManagementSystem.entity.TraineeEntity;
+import com.finalproject.EvaluationManagementSystem.entity.UserEntity;
 import com.finalproject.EvaluationManagementSystem.model.TraineeRequestModel;
 import com.finalproject.EvaluationManagementSystem.model.TraineeResponseModel;
 import com.finalproject.EvaluationManagementSystem.repository.TraineeRepository;
@@ -26,29 +27,35 @@ public class TraineeServiceImplementation implements TraineeService {
     }
 
     @Override
-    public ResponseEntity<Object> update(Long userID, TraineeRequestModel updatedTraineeRequestModel) {
-        Optional<TraineeEntity> traineeEntity = traineeRepository.findByUserEntityUserID(userID);
-        if (traineeEntity.isEmpty()){
+    public ResponseEntity<Object> update(TraineeRequestModel updatedTraineeRequestModel) {
+        Optional<UserEntity> userEntity = userRepository.findByFullName(updatedTraineeRequestModel.getFullName());
+        if (userEntity.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         else{
-            TraineeEntity trainee = traineeEntity.get();
-            trainee.setCgpa(updatedTraineeRequestModel.getCgpa());
-            trainee.setDob(updatedTraineeRequestModel.getDob());
-            trainee.setGender(updatedTraineeRequestModel.getGender());
-            trainee.setDegreeName(updatedTraineeRequestModel.getDegreeName());
-            trainee.setEducationalInstitute(updatedTraineeRequestModel.getEducationalInstitute());
-            trainee.setPassingYear(updatedTraineeRequestModel.getPassingYear());
-            traineeRepository.save(trainee);
+            Optional<TraineeEntity> traineeEntity = traineeRepository.findByUserEntityUserID(userEntity.get().getUserID());
+            if (traineeEntity.isEmpty()){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            else{
+                TraineeEntity trainee = traineeEntity.get();
+                trainee.setCgpa(updatedTraineeRequestModel.getCgpa());
+                trainee.setDob(updatedTraineeRequestModel.getDob());
+                trainee.setGender(updatedTraineeRequestModel.getGender());
+                trainee.setDegreeName(updatedTraineeRequestModel.getDegreeName());
+                trainee.setEducationalInstitute(updatedTraineeRequestModel.getEducationalInstitute());
+                trainee.setPassingYear(updatedTraineeRequestModel.getPassingYear());
+                traineeRepository.save(trainee);
 
-            traineeResponseModel.setTraineeID(trainee.getTraineeID());
-            traineeResponseModel.setFullName(userRepository.findById(userID).get().getFullName());
-            traineeResponseModel.setCgpa(trainee.getCgpa());
-            traineeResponseModel.setEducationalInstitute(trainee.getEducationalInstitute());
-            traineeResponseModel.setDegreeName(trainee.getDegreeName());
-            traineeResponseModel.setPassingYear(trainee.getPassingYear());
+                traineeResponseModel.setTraineeID(trainee.getTraineeID());
+                traineeResponseModel.setFullName(updatedTraineeRequestModel.getFullName());
+                traineeResponseModel.setCgpa(trainee.getCgpa());
+                traineeResponseModel.setEducationalInstitute(trainee.getEducationalInstitute());
+                traineeResponseModel.setDegreeName(trainee.getDegreeName());
+                traineeResponseModel.setPassingYear(trainee.getPassingYear());
 
-            return new ResponseEntity<>(traineeResponseModel, HttpStatus.CREATED);
+                return new ResponseEntity<>(traineeResponseModel, HttpStatus.CREATED);
+            }
         }
     }
 
