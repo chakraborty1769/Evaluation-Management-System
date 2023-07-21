@@ -19,7 +19,7 @@ public class TaskEvaluationEntity {
     private Long evaluationID;
     @OneToOne
     @JoinColumn(name = "task_id")
-    private TaskCreationEntity taskCreation;
+    private TaskCreateEntity taskCreation;
     @OneToOne
     @JoinColumn(name = "submission_id")
     private TaskSubmissionEntity taskSubmission;

@@ -21,7 +21,7 @@ public class TaskSubmissionEntity {
     private Long submissionID;
     @ManyToOne
     @JoinColumn(name = "task_id")
-    private TaskCreationEntity taskCreation;
+    private TaskCreateEntity taskCreation;
     @ManyToOne
     @JoinColumn(name = "type_id")
     private TaskTypeEntity taskType;

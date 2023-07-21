@@ -16,4 +16,6 @@ public interface TaskTypeService {
     ResponseEntity<List<TaskTypeEntity>> typeList();
 
     ResponseEntity<Object> getTaskTypeByID(Long typeID);
+
+    ResponseEntity<Object> getTaskTypeByName(String typeName);
 }

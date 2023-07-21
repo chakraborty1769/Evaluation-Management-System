@@ -34,4 +34,8 @@ public class TaskTypeController {
     public ResponseEntity<Object> getTaskType(@PathVariable("typeID") Long typeID){
         return taskTypeService.getTaskTypeByID(typeID);
     }
+    @GetMapping("/{typeName}")
+    public ResponseEntity<Object> getTaskTypeByName (@PathVariable ("typeName") String typeName){
+        return taskTypeService.getTaskTypeByName(typeName);
+    }
 }

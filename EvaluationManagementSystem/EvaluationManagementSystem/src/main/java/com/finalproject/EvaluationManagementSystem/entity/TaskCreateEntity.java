@@ -14,7 +14,7 @@ import java.util.Date;
 @Builder
 @Entity
 @Table(name = "task_list")
-public class TaskCreationEntity {
+public class TaskCreateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id")

@@ -71,4 +71,16 @@ public class TaskTypeServiceImplementation implements TaskTypeService {
             return new ResponseEntity<>(taskTypeModel, HttpStatus.FOUND);
         }
     }
+
+    @Override
+    public ResponseEntity<Object> getTaskTypeByName(String typeName) {
+        Optional<TaskTypeEntity> taskType = taskTypeRepository.findByTypeName(typeName);
+        if (taskType.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        else{
+            TaskTypeEntity taskTypeEntity = taskType.get();
+            return new ResponseEntity<>(taskTypeEntity, HttpStatus.FOUND);
+        }
+    }
 }
