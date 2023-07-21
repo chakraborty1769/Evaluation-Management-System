@@ -19,9 +19,9 @@ public class TraineeController {
     public ResponseEntity<Object> create(@RequestBody TraineeRequestModel traineeRequestModel){
         return traineeService.create(traineeRequestModel);
     }
-    @PutMapping("/update")
-    public ResponseEntity<Object> update (@RequestBody TraineeRequestModel updatedTraineeRequestModel){
-        return traineeService.update(updatedTraineeRequestModel);
+    @PutMapping("/update/{userID}")
+    public ResponseEntity<Object> update (@PathVariable ("userID") Long userID, @RequestBody TraineeRequestModel updatedTraineeRequestModel){
+        return traineeService.update(userID,updatedTraineeRequestModel);
     }
     @GetMapping("/{traineeID}")
     public ResponseEntity<Object> getTrainee (@PathVariable ("traineeID") Long traineeID){

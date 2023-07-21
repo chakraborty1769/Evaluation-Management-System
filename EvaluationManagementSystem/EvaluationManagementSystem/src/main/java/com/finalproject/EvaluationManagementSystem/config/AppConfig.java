@@ -1,5 +1,7 @@
 package com.finalproject.EvaluationManagementSystem.config;
 
+import com.finalproject.EvaluationManagementSystem.model.TraineeResponseModel;
+import com.finalproject.EvaluationManagementSystem.model.TrainerResponseModel;
 import com.finalproject.EvaluationManagementSystem.model.UserResponseModel;
 import com.finalproject.EvaluationManagementSystem.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,14 @@ public class AppConfig {
     @Bean
     public UserResponseModel userResponseModel(){
         return new UserResponseModel();
+    }
+    @Bean
+    public TraineeResponseModel traineeResponseModel(){
+        return new TraineeResponseModel();
+    }
+    @Bean
+    public TrainerResponseModel trainerResponseModel(){
+        return new TrainerResponseModel();
     }
     @Bean
     public AuthenticationProvider authenticationProvider(){

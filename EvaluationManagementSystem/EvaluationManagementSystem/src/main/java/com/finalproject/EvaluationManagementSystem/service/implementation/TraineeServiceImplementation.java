@@ -2,7 +2,9 @@ package com.finalproject.EvaluationManagementSystem.service.implementation;
 
 import com.finalproject.EvaluationManagementSystem.entity.TraineeEntity;
 import com.finalproject.EvaluationManagementSystem.model.TraineeRequestModel;
+import com.finalproject.EvaluationManagementSystem.model.TraineeResponseModel;
 import com.finalproject.EvaluationManagementSystem.repository.TraineeRepository;
+import com.finalproject.EvaluationManagementSystem.repository.UserRepository;
 import com.finalproject.EvaluationManagementSystem.service.TraineeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,14 +18,38 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TraineeServiceImplementation implements TraineeService {
     private final TraineeRepository traineeRepository;
+    private final UserRepository userRepository;
+    private final TraineeResponseModel traineeResponseModel;
     @Override
     public ResponseEntity<Object> create(TraineeRequestModel traineeRequestModel) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Object> update(TraineeRequestModel updatedTraineeRequestModel) {
-        return null;
+    public ResponseEntity<Object> update(Long userID, TraineeRequestModel updatedTraineeRequestModel) {
+        Optional<TraineeEntity> traineeEntity = traineeRepository.findByUserEntityUserID(userID);
+        if (traineeEntity.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        else{
+            TraineeEntity trainee = traineeEntity.get();
+            trainee.setCgpa(updatedTraineeRequestModel.getCgpa());
+            trainee.setDob(updatedTraineeRequestModel.getDob());
+            trainee.setGender(updatedTraineeRequestModel.getGender());
+            trainee.setDegreeName(updatedTraineeRequestModel.getDegreeName());
+            trainee.setEducationalInstitute(updatedTraineeRequestModel.getEducationalInstitute());
+            trainee.setPassingYear(updatedTraineeRequestModel.getPassingYear());
+            traineeRepository.save(trainee);
+
+            traineeResponseModel.setTraineeID(trainee.getTraineeID());
+            traineeResponseModel.setFullName(userRepository.findById(userID).get().getFullName());
+            traineeResponseModel.setCgpa(trainee.getCgpa());
+            traineeResponseModel.setEducationalInstitute(trainee.getEducationalInstitute());
+            traineeResponseModel.setDegreeName(trainee.getDegreeName());
+            traineeResponseModel.setPassingYear(trainee.getPassingYear());
+
+            return new ResponseEntity<>(traineeResponseModel, HttpStatus.CREATED);
+        }
     }
 
     @Override

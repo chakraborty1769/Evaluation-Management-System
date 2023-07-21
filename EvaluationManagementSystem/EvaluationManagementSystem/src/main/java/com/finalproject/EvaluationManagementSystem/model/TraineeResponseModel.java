@@ -14,9 +14,7 @@ import java.time.Year;
 @Builder
 public class TraineeResponseModel {
     private String fullName;
-    private String image;
-    private String email;
-    private String contactNumber;
+    private Long traineeID;
     private String degreeName;
     private String educationalInstitute;
     private Double cgpa;

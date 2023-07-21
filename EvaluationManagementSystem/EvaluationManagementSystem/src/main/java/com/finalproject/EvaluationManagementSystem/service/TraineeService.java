@@ -9,7 +9,7 @@ import java.util.List;
 public interface TraineeService {
     ResponseEntity<Object> create(TraineeRequestModel userDTO);
 
-    ResponseEntity<Object> update(TraineeRequestModel updatedTraineeRequestModel);
+    ResponseEntity<Object> update(Long userID, TraineeRequestModel updatedTraineeRequestModel);
 
     ResponseEntity<Object> getTrainee(Long traineeID);
 
